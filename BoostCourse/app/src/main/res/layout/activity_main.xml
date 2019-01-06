@@ -82,25 +82,30 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:gravity="center">
-                        <ImageView
+                        <CheckBox
+                            android:id="@+id/up_IBtn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="5dp"
                             android:padding="2dp"
-                            android:src="@drawable/ic_thumb_up"/>
+                            android:button="@drawable/upbtn_selector"
+                            />
                         <TextView
+                            android:id="@+id/up_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="13dp"
                             android:textColor="@color/white"
                             android:text="15"/>
-                        <ImageView
+                        <CheckBox
+                            android:id="@+id/down_IBtn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="5dp"
-                            android:padding="2dp"
-                            android:src="@drawable/ic_thumb_down"/>
+                            android:button="@drawable/downbtn_selector"
+                            android:padding="2dp" />
                         <TextView
+                            android:id="@+id/down_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/white"
