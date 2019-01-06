@@ -247,7 +247,83 @@
                         android:text="하정우(도치), 강동원(조윤)"/>
                 </LinearLayout>
             </LinearLayout>
-            
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="한줄평"
+                        android:textColor="@color/black" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/ic_review_selected" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="2dp"
+                            android:text="작성하기"
+                            android:textColor="#f7582c"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/allviewbtn_bg"
+                    android:text="모두 보기"
+                    android:textColor="#a747ce"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:background="@color/white">
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_facebook"/>
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/ic_kakao"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#da4d4d"
+                    android:text="예매하기"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
