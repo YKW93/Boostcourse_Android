@@ -255,13 +255,14 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@color/white"
                 android:orientation="vertical"
                 android:padding="10dp">
 
                 <RelativeLayout
+                    android:id="@+id/tmpLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -274,8 +275,11 @@
                         android:textColor="@color/black" />
 
                     <LinearLayout
+                        android:id="@+id/createReivew_layout"
+                        android:background="?android:attr/selectableItemBackground"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="3dp"
                         android:layout_alignParentRight="true">
 
                         <ImageView
@@ -294,10 +298,24 @@
                             android:textSize="13sp" />
                     </LinearLayout>
                 </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_below="@+id/tmpLayout"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+                </LinearLayout>
+
                 <Button
+                    android:id="@+id/allView_Btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
+                    android:layout_below="@id/container_layout"
+                    android:foreground="?android:attr/selectableItemBackground"
                     android:background="@drawable/allviewbtn_bg"
                     android:text="모두 보기"
                     android:textColor="#a747ce"

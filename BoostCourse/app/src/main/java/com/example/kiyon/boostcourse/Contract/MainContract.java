@@ -16,6 +16,5 @@ public interface MainContract {
         void setCountData(CountData countData);
         void upCount(boolean isClicked);
         void downCount(boolean isClicked);
-
     }
 }

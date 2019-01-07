@@ -1,14 +1,12 @@
 package com.example.kiyon.boostcourse;
 
-import android.databinding.DataBindingComponent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CompoundButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.kiyon.boostcourse.Contract.MainContract;
@@ -33,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         presenter.attachView(this);
 
         InitView();
+        addReivewLayout();
     }
 
     private void InitView() {
@@ -61,6 +60,32 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                 presenter.downCount(b);
             }
         });
+
+        binding.allViewBtn.setOnClickListener(onClickListener);
+        binding.createReivewLayout.setOnClickListener(onClickListener);
+
+    }
+
+    private View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.allView_Btn :
+                    Toast.makeText(MainActivity.this, "전체 보기 클릭" , Toast.LENGTH_LONG).show();
+                    break;
+                case R.id.createReivew_layout :
+                    Toast.makeText(MainActivity.this, "작성 하기 클릭" , Toast.LENGTH_LONG).show();
+                    break;
+            }
+        }
+    };
+
+    private void addReivewLayout() {
+
+            View view = LayoutInflater.from(this).inflate(R.layout.item_reivew, null);
+            View view1 = LayoutInflater.from(this).inflate(R.layout.item_reivew, null);
+            binding.containerLayout.addView(view);
+            binding.containerLayout.addView(view1);
 
     }
 
