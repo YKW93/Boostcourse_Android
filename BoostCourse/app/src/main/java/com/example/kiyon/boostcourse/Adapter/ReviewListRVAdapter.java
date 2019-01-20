@@ -41,7 +41,7 @@ public class ReviewListRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MainReviewListVH(LayoutInflater.from(mContext).inflate(R.layout.item_reivew, parent, false));
+        return new MainReviewListVH(LayoutInflater.from(mContext).inflate(R.layout.item_recyclerview_reivew, parent, false));
     }
 
     @Override

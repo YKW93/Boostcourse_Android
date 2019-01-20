@@ -1,24 +1,23 @@
 package com.example.kiyon.boostcourse.Presenter;
 
+import com.example.kiyon.boostcourse.Adapter.Contract.MainVHAdapterContract;
 import com.example.kiyon.boostcourse.Contract.MainContract;
-import com.example.kiyon.boostcourse.Adapter.Contract.ReviewListRVAdapterContract;
-import com.example.kiyon.boostcourse.model.CountData;
-import com.example.kiyon.boostcourse.model.ReviewData;
+import com.example.kiyon.boostcourse.R;
+import com.example.kiyon.boostcourse.model.MovieData;
 
 import java.util.ArrayList;
 
-public class MainPresenter implements MainContract.Presenter{
+public class MainPresenter implements MainContract.Presenter {
 
     private MainContract.View view;
-    private CountData countData;
-    private ArrayList<ReviewData> reviewDataArrayList;
-    private ReviewListRVAdapterContract.Model adapterModel;
-    private ReviewListRVAdapterContract.View adapterView;
+    private ArrayList<MovieData> movieDataArrayList;
+    private MainVHAdapterContract.View adapterView;
+    private MainVHAdapterContract.Model adapterModel;
 
     @Override
     public void attachView(MainContract.View view) {
         this.view = view;
-        reviewDataArrayList = new ArrayList<>();
+        movieDataArrayList = new ArrayList<>();
     }
 
     @Override
@@ -27,59 +26,43 @@ public class MainPresenter implements MainContract.Presenter{
     }
 
     @Override
-    public void setCountData(CountData countData) {
-        this.countData = countData;
-    }
+    public void setMovieDataList() {
+        MovieData movieData1 = new MovieData();
+        movieData1.image = R.drawable.image1;
+        movieData1.name = "1. 군도";
+        movieDataArrayList.add(movieData1);
+        MovieData movieData2 = new MovieData();
+        movieData2.image = R.drawable.image2;
+        movieData2.name = "2. 공조";
+        movieDataArrayList.add(movieData2);
+        MovieData movieData3 = new MovieData();
+        movieData3.image = R.drawable.image3;
+        movieData3.name = "3. 더킹";
+        movieDataArrayList.add(movieData3);
+        MovieData movieData4 = new MovieData();
+        movieData4.image = R.drawable.image4;
+        movieData4.name = "4. 레지던트이블";
+        movieDataArrayList.add(movieData4);
+        MovieData movieData5 = new MovieData();
+        movieData5.image = R.drawable.image5;
+        movieData5.name = "5. 럭키";
+        movieDataArrayList.add(movieData5);
+        MovieData movieData6 = new MovieData();
+        movieData6.image = R.drawable.image6;
+        movieData6.name = "6. 아수라";
+        movieDataArrayList.add(movieData6);
 
-
-    @Override
-    public void upCount(boolean isClicked) {
-        if (isClicked) {
-            countData.upCount++;
-            if (view.getViewType(2)) {
-                view.changeUpDownView(1);
-            }
-        } else {
-            countData.upCount--;
-        }
-
-        view.setUpDownCountView(countData);
-    }
-
-    @Override
-    public void downCount(boolean isClicked) {
-        if (isClicked) {
-            countData.downCount++;
-            if (view.getViewType(1)) {
-                view.changeUpDownView(2);
-            }
-        } else {
-            countData.downCount--;
-        }
-
-        view.setUpDownCountView(countData);
-    }
-
-    @Override
-    public void loadReviewData(ReviewData reviewData) {
-        reviewDataArrayList.add(reviewData);
-        adapterModel.addItems(reviewDataArrayList);
+        adapterModel.addItem(movieDataArrayList);
         adapterView.notifyAdapter();
     }
 
     @Override
-    public ArrayList<ReviewData> getReviewDataList() {
-        return reviewDataArrayList;
-    }
-
-    @Override
-    public void setReviewAdapterModel(ReviewListRVAdapterContract.Model adapterModel) {
+    public void setMainAdapterModel(MainVHAdapterContract.Model adapterModel) {
         this.adapterModel = adapterModel;
     }
 
     @Override
-    public void setReviewAdapterView(ReviewListRVAdapterContract.View adapterView) {
+    public void setMainAdapterView(MainVHAdapterContract.View adapterView) {
         this.adapterView = adapterView;
     }
-
 }
