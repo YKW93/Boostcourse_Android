@@ -4,7 +4,7 @@ import com.example.kiyon.boostcourse.model.ReviewData;
 
 import java.util.ArrayList;
 
-public interface MainReviewListRVAdapterContract {
+public interface ReviewListRVAdapterContract {
     interface View {
         void notifyAdapter();
     }

@@ -1,7 +1,7 @@
 package com.example.kiyon.boostcourse.Presenter;
 
 import com.example.kiyon.boostcourse.Contract.MainContract;
-import com.example.kiyon.boostcourse.Adapter.Contract.MainReviewListRVAdapterContract;
+import com.example.kiyon.boostcourse.Adapter.Contract.ReviewListRVAdapterContract;
 import com.example.kiyon.boostcourse.model.CountData;
 import com.example.kiyon.boostcourse.model.ReviewData;
 
@@ -12,8 +12,8 @@ public class MainPresenter implements MainContract.Presenter{
     private MainContract.View view;
     private CountData countData;
     private ArrayList<ReviewData> reviewDataArrayList;
-    private MainReviewListRVAdapterContract.Model adapterModel;
-    private MainReviewListRVAdapterContract.View adapterView;
+    private ReviewListRVAdapterContract.Model adapterModel;
+    private ReviewListRVAdapterContract.View adapterView;
 
     @Override
     public void attachView(MainContract.View view) {
@@ -68,12 +68,17 @@ public class MainPresenter implements MainContract.Presenter{
     }
 
     @Override
-    public void setMainAdapterModel(MainReviewListRVAdapterContract.Model adapterModel) {
+    public ArrayList<ReviewData> getReviewDataList() {
+        return reviewDataArrayList;
+    }
+
+    @Override
+    public void setReviewAdapterModel(ReviewListRVAdapterContract.Model adapterModel) {
         this.adapterModel = adapterModel;
     }
 
     @Override
-    public void setMainAdapterView(MainReviewListRVAdapterContract.View adapterView) {
+    public void setReviewAdapterView(ReviewListRVAdapterContract.View adapterView) {
         this.adapterView = adapterView;
     }
 

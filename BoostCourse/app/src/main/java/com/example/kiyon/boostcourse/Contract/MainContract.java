@@ -1,8 +1,10 @@
 package com.example.kiyon.boostcourse.Contract;
 
-import com.example.kiyon.boostcourse.Adapter.Contract.MainReviewListRVAdapterContract;
+import com.example.kiyon.boostcourse.Adapter.Contract.ReviewListRVAdapterContract;
 import com.example.kiyon.boostcourse.model.CountData;
 import com.example.kiyon.boostcourse.model.ReviewData;
+
+import java.util.ArrayList;
 
 public interface MainContract {
 
@@ -19,8 +21,9 @@ public interface MainContract {
         void upCount(boolean isClicked);
         void downCount(boolean isClicked);
         void loadReviewData(ReviewData reviewData);
-        void setMainAdapterModel(MainReviewListRVAdapterContract.Model adapterModel);
-        void setMainAdapterView(MainReviewListRVAdapterContract.View adapterView);
+        ArrayList<ReviewData> getReviewDataList();
+        void setReviewAdapterModel(ReviewListRVAdapterContract.Model adapterModel);
+        void setReviewAdapterView(ReviewListRVAdapterContract.View adapterView);
 
     }
 }

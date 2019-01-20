@@ -14,7 +14,7 @@ import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.kiyon.boostcourse.Adapter.MainReviewListRVAdapter;
+import com.example.kiyon.boostcourse.Adapter.ReviewListRVAdapter;
 import com.example.kiyon.boostcourse.Contract.MainContract;
 import com.example.kiyon.boostcourse.Presenter.MainPresenter;
 import com.example.kiyon.boostcourse.R;
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private CheckBox down_Ibtn;
 
     private RecyclerView recyclerView;
-    private MainReviewListRVAdapter mainReviewListRVAdapter;
+    private ReviewListRVAdapter mainReviewListRVAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,10 +57,10 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mainReviewListRVAdapter = new MainReviewListRVAdapter(this);
+        mainReviewListRVAdapter = new ReviewListRVAdapter(this);
         recyclerView.setAdapter(mainReviewListRVAdapter);
-        presenter.setMainAdapterModel(mainReviewListRVAdapter);
-        presenter.setMainAdapterView(mainReviewListRVAdapter);
+        presenter.setReviewAdapterModel(mainReviewListRVAdapter);
+        presenter.setReviewAdapterView(mainReviewListRVAdapter);
 
         CountData countData = new CountData(16, 20);
 
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.allView_Btn :
-                    Intent intent = new Intent(MainActivity.this, TotalReviewActivity.class);
+                    Intent intent = TotalReviewActivity.newIntent(MainActivity.this, presenter.getReviewDataList());
                     startActivity(intent);
                     break;
                 case R.id.createReivew_layout :

@@ -9,19 +9,19 @@ import android.view.ViewGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.example.kiyon.boostcourse.Adapter.Contract.MainReviewListRVAdapterContract;
+import com.example.kiyon.boostcourse.Adapter.Contract.ReviewListRVAdapterContract;
 import com.example.kiyon.boostcourse.R;
 import com.example.kiyon.boostcourse.model.ReviewData;
 
 import java.util.ArrayList;
 
-public class MainReviewListRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
-        implements MainReviewListRVAdapterContract.Model, MainReviewListRVAdapterContract.View {
+public class ReviewListRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
+        implements ReviewListRVAdapterContract.Model, ReviewListRVAdapterContract.View {
 
     private ArrayList<ReviewData> reviewData;
     private Context mContext;
 
-    public MainReviewListRVAdapter(Context context) {
+    public ReviewListRVAdapter(Context context) {
         mContext = context;
         reviewData = new ArrayList<>();
     }
