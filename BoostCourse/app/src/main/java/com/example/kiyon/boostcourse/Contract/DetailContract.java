@@ -6,7 +6,7 @@ import com.example.kiyon.boostcourse.model.ReviewData;
 
 import java.util.ArrayList;
 
-public interface MainContract {
+public interface DetailContract {
 
     interface View {
         void changeUpDownView(int type);

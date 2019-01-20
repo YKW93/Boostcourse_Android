@@ -1,22 +1,22 @@
 package com.example.kiyon.boostcourse.Presenter;
 
-import com.example.kiyon.boostcourse.Contract.MainContract;
+import com.example.kiyon.boostcourse.Contract.DetailContract;
 import com.example.kiyon.boostcourse.Adapter.Contract.ReviewListRVAdapterContract;
 import com.example.kiyon.boostcourse.model.CountData;
 import com.example.kiyon.boostcourse.model.ReviewData;
 
 import java.util.ArrayList;
 
-public class MainPresenter implements MainContract.Presenter{
+public class DetailPresenter implements DetailContract.Presenter{
 
-    private MainContract.View view;
+    private DetailContract.View view;
     private CountData countData;
     private ArrayList<ReviewData> reviewDataArrayList;
     private ReviewListRVAdapterContract.Model adapterModel;
     private ReviewListRVAdapterContract.View adapterView;
 
     @Override
-    public void attachView(MainContract.View view) {
+    public void attachView(DetailContract.View view) {
         this.view = view;
         reviewDataArrayList = new ArrayList<>();
     }

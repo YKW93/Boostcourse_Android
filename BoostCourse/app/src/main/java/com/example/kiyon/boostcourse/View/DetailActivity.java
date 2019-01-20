@@ -15,19 +15,19 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.kiyon.boostcourse.Adapter.ReviewListRVAdapter;
-import com.example.kiyon.boostcourse.Contract.MainContract;
-import com.example.kiyon.boostcourse.Presenter.MainPresenter;
+import com.example.kiyon.boostcourse.Contract.DetailContract;
+import com.example.kiyon.boostcourse.Presenter.DetailPresenter;
 import com.example.kiyon.boostcourse.R;
 import com.example.kiyon.boostcourse.model.CountData;
 import com.example.kiyon.boostcourse.model.ReviewData;
 
 import static com.example.kiyon.boostcourse.View.ReviewActivity.REVIEW_DATA;
 
-public class MainActivity extends AppCompatActivity implements MainContract.View {
+public class DetailActivity extends AppCompatActivity implements DetailContract.View {
 
     public static final int REVIEW_CREATE = 1;
 
-    private MainContract.Presenter presenter;
+    private DetailContract.Presenter presenter;
 
     private TextView up_count;
     private TextView down_count;
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        presenter = new MainPresenter();
+        presenter = new DetailPresenter();
         presenter.attachView(this);
 
         InitView();
@@ -104,11 +104,11 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.allView_Btn :
-                    Intent intent = TotalReviewActivity.newIntent(MainActivity.this, presenter.getReviewDataList());
+                    Intent intent = TotalReviewActivity.newIntent(DetailActivity.this, presenter.getReviewDataList());
                     startActivity(intent);
                     break;
                 case R.id.createReivew_layout :
-                    Intent intent1 = new Intent(MainActivity.this, ReviewActivity.class);
+                    Intent intent1 = new Intent(DetailActivity.this, ReviewActivity.class);
                     startActivityForResult(intent1, REVIEW_CREATE);
                     break;
             }
