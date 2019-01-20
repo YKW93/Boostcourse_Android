@@ -40,7 +40,7 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_detail);
 
         presenter = new DetailPresenter();
         presenter.attachView(this);
